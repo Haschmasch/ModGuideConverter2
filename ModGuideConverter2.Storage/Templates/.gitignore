@@ -1,0 +1,6 @@
+#First, ignore everything
+*
+#Whitelist the \Modules Directory
+!*/Modules
+#Whitelist all .json files
+!*.json

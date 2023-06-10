@@ -22,6 +22,12 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
         public string Address { get => _address; set => _address = value; }
         public string City { get => _city; set => _city = value; }
         public string ZipCode { get => _zipCode; set => _zipCode = value; }
+
+        /// <summary>
+        /// Country as defined in europass .xml<br/>
+        /// http://publications.europa.eu/resource/authority/country<br/>
+        /// http://publications.europa.eu/resource/authority/country/DEU
+        /// </summary>
         public string Country { get => _country; set => _country = value; }
     }
 }

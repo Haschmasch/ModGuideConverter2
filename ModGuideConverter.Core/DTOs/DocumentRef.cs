@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
+namespace ModGuideConverter.Core.DTOs
 {
     public class DocumentRef
     {

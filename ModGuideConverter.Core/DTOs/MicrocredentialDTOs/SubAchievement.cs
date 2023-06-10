@@ -13,19 +13,18 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
     public class SubAchievement
     {
         private SubAchievement? _childAchievement;
-        private string _name;
-        private string _description;
+        private List<TranslationText> _title;
+        private List<TranslationText> _description;
         private string? _grade;
-        private TimeSpan? _duration;
         private DateTime? _issueDate;
-        private string _verificationMethod;
+        private List<TranslationText> _verificationMethod;
         private DocumentRef? _document;
+        private LearningSpecification _learningSpecification;
 
         public SubAchievement? ChildAchievement { get => _childAchievement; set => _childAchievement = value; }
-        public string Name { get => _name; set => _name = value; }
-        public string Description { get => _description; set => _description = value; }
+        public List<TranslationText> Title { get => _title; set => _title = value; }
+        public List<TranslationText> Description { get => _description; set => _description = value; }
         public string? Grade { get => _grade; set => _grade = value; }
-        public TimeSpan? Duration { get => _duration; set => _duration = value; }
         public DateTime? IssueDate { get => _issueDate; set => _issueDate = value; }
         /// <summary>
         /// Type of assesment.<br/>
@@ -33,7 +32,8 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/supervision-verification/25831c2 <br/>
         /// http://data.europa.eu/snb/supervision-verification/44314532f9
         /// </summary>
-        public string VerificationMethod { get => _verificationMethod; set => _verificationMethod = value; }
+        public List<TranslationText> VerificationMethod { get => _verificationMethod; set => _verificationMethod = value; }
         public DocumentRef? Document { get => _document; set => _document = value; }
+        public LearningSpecification LearningSpecification { get => _learningSpecification; set => _learningSpecification = value; }
     }
 }

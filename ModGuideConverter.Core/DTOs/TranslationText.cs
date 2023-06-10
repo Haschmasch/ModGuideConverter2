@@ -8,16 +8,16 @@ namespace ModGuideConverter.Core.DTOs
 {
     public class TranslationText
     {
-        private string _languageShort;
-        private string _text;
+        private string _languageShort = "en";
+        private string _text = "Default Text";
 
+        /// <summary>
+        /// ISO 936-1 language code
+        /// </summary>
         public string LanguageShort { get => _languageShort; set => _languageShort = value; }
+        /// <summary>
+        /// The text in the corresponding language
+        /// </summary>
         public string Text { get => _text; set => _text = value; }
-
-        public TranslationText()
-        {
-            _languageShort = String.Empty;
-            _text = String.Empty;
-        }
     }
 }

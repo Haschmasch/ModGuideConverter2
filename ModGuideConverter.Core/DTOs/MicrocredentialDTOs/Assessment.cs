@@ -29,6 +29,7 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/learning-assessment/7813801c77
         /// </summary>
         public List<TranslationText> Mode { get => _mode; set => _mode = value; }
+
         public ScoringScheme? ScoringScheme { get => _scoringScheme; set => _scoringScheme = value; }
     }
 }

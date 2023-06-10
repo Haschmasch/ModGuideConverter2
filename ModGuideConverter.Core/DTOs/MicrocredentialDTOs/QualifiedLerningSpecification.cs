@@ -10,17 +10,15 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
     {
         private List<TranslationText> _learningOpportunity;
 
-        private List<TranslationText> _iSCED_FCode;
+        private List<TranslationText> _isced_FCode;
 
-        private TimeSpan _learningVolume;
-
-        private string _eCTSCredits;
+        private string _ectsCredits;
 
         private List<TranslationText> _learningMode;
 
         private List<TranslationText> _learningSettingTypeMode;
 
-        private List<List<TranslationText>> _entryRequirements;
+        private List<TranslationText> _entryRequirements;
 
         private bool _isPartialQualification;
 
@@ -41,11 +39,9 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/isced-f/25831c2 <br/>
         /// http://data.europa.eu/snb/isced-f/0613
         /// </summary>
-        public List<TranslationText> ISCED_FCode { get => _iSCED_FCode; set => _iSCED_FCode = value; }
-        
-        public TimeSpan LearningVolume { get => _learningVolume; set => _learningVolume = value; }
-        
-        public string ECTSCredits { get => _eCTSCredits; set => _eCTSCredits = value; }
+        public List<TranslationText> Isced_FCode { get => _isced_FCode; set => _isced_FCode = value; }
+
+        public string EctsCredits { get => _ectsCredits; set => _ectsCredits = value; }
        
         /// <summary>
         /// References to the Europass Standard List of Modes Of Learning and Assessment.<br/>
@@ -61,7 +57,7 @@ namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
         /// </summary>
         public List<TranslationText> LearningSettingTypeMode { get => _learningSettingTypeMode; set => _learningSettingTypeMode = value; }
         
-        public List<List<TranslationText>> EntryRequirements { get => _entryRequirements; set => _entryRequirements = value; }
+        public List<TranslationText> EntryRequirements { get => _entryRequirements; set => _entryRequirements = value; }
         
         public bool IsPartialQualification { get => _isPartialQualification; set => _isPartialQualification = value; }
         
