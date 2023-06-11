@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModGuideConverter.Core.Models
+namespace ModGuideConverter2.Data
 {
     /// <summary>
     /// This allows to add custom Properties to the Identity User if needed.

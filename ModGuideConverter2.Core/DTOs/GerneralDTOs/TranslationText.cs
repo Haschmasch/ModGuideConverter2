@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModGuideConverter.Core.DTOs
+namespace ModGuideConverter2.Core.DTOs.GerneralDTOs
 {
     public class TranslationText
     {

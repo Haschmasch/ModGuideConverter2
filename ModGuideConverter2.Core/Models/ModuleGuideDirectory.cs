@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModGuideConverter.Core.Models
+namespace ModGuideConverter2.Core.Models
 {
     public class ModuleGuideDirectory
     {

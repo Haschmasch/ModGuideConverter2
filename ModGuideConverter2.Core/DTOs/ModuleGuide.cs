@@ -5,8 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using ModGuideConverter2.Core.DTOs.GerneralDTOs;
 
-namespace ModGuideConverter.Core.DTOs
+namespace ModGuideConverter2.Core.DTOs
 {
     /// <summary>
     /// 

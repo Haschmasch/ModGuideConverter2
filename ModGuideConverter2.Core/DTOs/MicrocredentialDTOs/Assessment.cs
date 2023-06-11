@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModGuideConverter2.Core.DTOs.GerneralDTOs;
 
-namespace ModGuideConverter.Core.DTOs.MicrocredentialDTOs
+namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 {
     public class Assessment
     {

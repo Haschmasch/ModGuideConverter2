@@ -1,4 +1,5 @@
-﻿using ModGuideConverter.Core.DTOs.MicrocredentialDTOs;
+﻿using ModGuideConverter2.Core.DTOs.MicrocredentialDTOs;
+using ModGuideConverter2.Core.DTOs.GerneralDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModGuideConverter.Core.DTOs
+namespace ModGuideConverter2.Core.DTOs
 {
     /// <summary>
     /// Contains DHBW specific information that is not neccesarily needed to form a eu-microcredential.<br/>

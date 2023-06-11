@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ModGuideConverter.Core.DTOs.MicrocredentialDTOs;
+using ModGuideConverter2.Core.DTOs.MicrocredentialDTOs;
+using ModGuideConverter2.Core.DTOs.GerneralDTOs;
 
-namespace ModGuideConverter.Core.DTOs
+namespace ModGuideConverter2.Core.DTOs
 {
     /// <summary>
     /// Contains all properites to from a EU-compliant microcredential.<br/>
