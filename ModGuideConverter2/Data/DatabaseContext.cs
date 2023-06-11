@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ModGuideConverter.Core.Models;
 using ModGuideConverter2.Core.Models;
 
 namespace ModGuideConverter2.Data

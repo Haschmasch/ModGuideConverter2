@@ -1,4 +1,4 @@
-﻿using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Storage.Services;
 using System;
 using System.Collections.Generic;

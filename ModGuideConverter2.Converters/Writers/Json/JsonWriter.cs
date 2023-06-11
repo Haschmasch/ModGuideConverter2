@@ -1,5 +1,5 @@
-﻿using ModGuideConverter.Core.DTOs;
-using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.DTOs;
+using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Converters.Services;
 using System;
 using System.Collections.Generic;
