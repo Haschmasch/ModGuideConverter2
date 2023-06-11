@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModGuideConverter2", "ModGuideConverter2\ModGuideConverter2.csproj", "{831F2C7E-D658-4002-91FC-5F470C80E359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2", "ModGuideConverter2\ModGuideConverter2.csproj", "{831F2C7E-D658-4002-91FC-5F470C80E359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModGuideConverter.Core", "ModGuideConverter.Core\ModGuideConverter.Core.csproj", "{1009AFEC-910D-40F1-AF71-45C1F333CCE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2.Core", "ModGuideConverter2.Core\ModGuideConverter2.Core.csproj", "{1009AFEC-910D-40F1-AF71-45C1F333CCE9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2.Converters", "ModGuideConverter2.Converters\ModGuideConverter2.Converters.csproj", "{1CF82392-91CE-47ED-AE28-52A9A7A699F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModGuideConverter2.TestApp", "ModGuideConverter2.TestApp\ModGuideConverter2.TestApp.csproj", "{69C84610-5AD4-4045-9EA6-BCF1EE3D8EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2.TestApp", "ModGuideConverter2.TestApp\ModGuideConverter2.TestApp.csproj", "{69C84610-5AD4-4045-9EA6-BCF1EE3D8EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModGuideConverter2.Tests", "ModGuideConverter2.Tests\ModGuideConverter2.Tests.csproj", "{CAE7A9B3-64AF-42B0-9793-C5D375F352A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2.Tests", "ModGuideConverter2.Tests\ModGuideConverter2.Tests.csproj", "{CAE7A9B3-64AF-42B0-9793-C5D375F352A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModGuideConverter2.Storage", "ModGuideConverter2.Storage\ModGuideConverter2.Storage.csproj", "{D4FB51A0-D63F-47BE-85FC-2E63BC54A3A9}"
 EndProject

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModGuideConverter.Core\ModGuideConverter.Core.csproj" />
+    <ProjectReference Include="..\ModGuideConverter2.Core\ModGuideConverter2.Core.csproj" />
   </ItemGroup>
 
 </Project>
