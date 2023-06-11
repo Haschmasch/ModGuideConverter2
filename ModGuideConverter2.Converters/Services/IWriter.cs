@@ -12,8 +12,8 @@ namespace ModGuideConverter2.Converters.Services
     {
         ModuleGuideDirectory ModuleGuideDirectory { get; }
         
-        void Write(ModuleGuide moduleGuide);
+        void Write(ModuleGuideDTO moduleGuide);
 
-        void Write(Module module);
+        void Write(ModuleDTO module);
     }
 }

@@ -11,7 +11,7 @@ namespace ModGuideConverter2.Storage.Services
     {
         public RootDirectory RootDirectory { get; }
         /// <summary>
-        /// 
+        /// Adds a root directory
         /// </summary>
         void Add();
 

@@ -24,7 +24,7 @@ namespace ModGuideConverter2.Storage.Git
             throw new NotImplementedException();
         }
 
-        public void AddModule(Module module)
+        public void AddModule(ModuleDTO module)
         {
             throw new NotImplementedException();
         }
@@ -69,12 +69,12 @@ namespace ModGuideConverter2.Storage.Git
             throw new NotImplementedException();
         }
 
-        public void UpdateModule(Module module)
+        public void UpdateModule(ModuleDTO module)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateModuleGuide(ModuleGuide moduleGuide)
+        public void UpdateModuleGuide(ModuleGuideDTO moduleGuide)
         {
             throw new NotImplementedException();
         }

@@ -18,12 +18,12 @@ namespace ModGuideConverter2.Converters.Writers.Json
             ModuleGuideDirectory = moduleGuideDirectory;
         }
 
-        public void Write(ModuleGuide moduleGuide)
+        public void Write(ModuleGuideDTO moduleGuide)
         {
             throw new NotImplementedException();
         }
 
-        public void Write(Module module)
+        public void Write(ModuleDTO module)
         {
             throw new NotImplementedException();
         }

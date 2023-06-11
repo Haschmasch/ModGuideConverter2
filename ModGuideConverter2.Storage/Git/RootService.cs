@@ -17,6 +17,11 @@ namespace ModGuideConverter2.Storage.Git
             RootDirectory = rootDirectory;
         }
 
+        /// <summary>
+        /// This is a implementation of adding root directories.<br/>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void Add()
         {
             throw new NotImplementedException();

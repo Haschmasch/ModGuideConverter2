@@ -9,9 +9,9 @@ namespace ModGuideConverter2.Core.DTOs.GerneralDTOs
     public class DocumentRef
     {
         private Uri? _uri;
-        private List<TranslationText> _translations;
+        private string _name;
 
         public Uri? Uri { get => _uri; set => _uri = value; }
-        public List<TranslationText> Translations { get => _translations; set => _translations = value; }
+        public string Name { get => _name; set => _name = value; }
     }
 }

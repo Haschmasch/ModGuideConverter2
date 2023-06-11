@@ -12,7 +12,7 @@ namespace ModGuideConverter2.Core.DTOs
     /// <summary>
     /// Contains DHBW specific information that is not neccesarily needed to form a eu-microcredential.<br/>
     /// </summary>
-    public class Module : Microcredential
+    public class ModuleDTO : MicrocredentialDTO
     {
         private string _moduleId;
         private List<TranslationText> _yearOfStudy;
@@ -29,5 +29,14 @@ namespace ModGuideConverter2.Core.DTOs
         public List<TranslationText> Remarks { get => _remarks; set => _remarks = value; }
         public List<DocumentRef> Documents { get => _documents; set => _documents = value; }
 
+        public ModuleDTO()
+        {
+            _moduleId = "T3INF2003";
+            _yearOfStudy = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "Second year" } };
+            _moduleDuration = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "2 semesters" } };
+            _responsiblePerson = new PersonalIdentity();
+            _remarks = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "None" } };
+            _documents = new List<DocumentRef> { new DocumentRef() { Name = "Rational Unified Process", Uri = new Uri("https://de.wikipedia.org/wiki/Rational_Unified_Process") } };
+        }
     }
 }

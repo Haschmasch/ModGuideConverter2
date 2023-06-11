@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModGuideConverter2.Core.DTOs.GerneralDTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         private string _address;
         private string _city;
         private string _zipCode;
-        private string _country;
-
+        private List<TranslationText> _country;
 
         public string Email { get => _email; set => _email = value; }
         public string Phone { get => _phone; set => _phone = value; }
@@ -28,6 +28,16 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// http://publications.europa.eu/resource/authority/country<br/>
         /// http://publications.europa.eu/resource/authority/country/DEU
         /// </summary>
-        public string Country { get => _country; set => _country = value; }
+        public List<TranslationText> Country { get => _country; set => _country = value; }
+
+        protected Identity()
+        {
+            _email = "poststelle@dhbw.de";
+            _phone = "0497113206600";
+            _address = "Friedrichstraße 14";
+            _city = "Stuttgart";
+            _zipCode = "70174";
+            _country = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Germany" } };
+        }
     }
 }

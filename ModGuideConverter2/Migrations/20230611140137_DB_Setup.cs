@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ModGuideConverter2.Migrations
 {
     /// <inheritdoc />
-    public partial class DBSetup : Migration
+    public partial class DB_Setup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -228,9 +228,9 @@ namespace ModGuideConverter2.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "01772b1e-aae1-4c87-91f0-4f3f65d6e2aa", "c7c9e568-239f-40c8-a796-fcfecf9c712a", "Manager", "MANAGER" },
-                    { "3be935b3-7e50-405f-b126-0e813c4b2d8a", "5092b1e7-d530-4223-b621-cddf7e7ce28a", "User", "USER" },
-                    { "47b73c91-9ebd-4292-88f7-732881185bdc", "5b3e5006-9c10-4940-8bcd-a0e1b25c5a07", "Administrator", "ADMINISTRATOR" }
+                    { "41e722da-72cb-4ec1-9838-187e0f7b18d5", "d1f60d18-bf95-4ad8-b12e-6a6dcb151725", "Manager", "MANAGER" },
+                    { "ba11e7d7-a97d-4829-85b6-96bb322b8fcf", "18d987d3-2103-4934-827d-886b2f415946", "Administrator", "ADMINISTRATOR" },
+                    { "fec9c9ad-1c04-4c07-bb44-7cad634f551e", "7efcc5c2-135d-482e-bf30-3cb5e8d5fb5d", "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(

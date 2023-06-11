@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModGuideConverter2.Core.DTOs;
 
 namespace ModGuideConverter2.Converters.Readers.Json
 {
@@ -19,6 +20,8 @@ namespace ModGuideConverter2.Converters.Readers.Json
 
         public void ReadModule()
         {
+            ModuleGuideDTO guide = new ModuleGuideDTO();
+
             throw new NotImplementedException();
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using ModGuideConverter2.Core.DTOs.GerneralDTOs;
@@ -13,6 +14,8 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         private List<TranslationText> _type;
 
         private List<TranslationText> _mode;
+
+        private TimeSpan _assesmentDuration;
 
         private ScoringScheme? _scoringScheme;
 
@@ -32,5 +35,16 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         public List<TranslationText> Mode { get => _mode; set => _mode = value; }
 
         public ScoringScheme? ScoringScheme { get => _scoringScheme; set => _scoringScheme = value; }
+        public TimeSpan AssesmentDuration { get => _assesmentDuration; set => _assesmentDuration = value; }
+
+        /// <summary>
+        /// This gives field inital sample values.
+        /// </summary>
+        public Assessment()
+        {
+            _type = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "continuous evaluation" } };
+            _mode = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Project based" } };
+            _assesmentDuration = new TimeSpan(2, 0, 0);
+        }
     }
 }

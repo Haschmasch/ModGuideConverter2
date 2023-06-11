@@ -10,16 +10,17 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 {
     public class ScoringScheme
     {
-        private string? _identifier;
+        private List<TranslationText>? _identifier;
 
         private List<TranslationText> _measurement;
 
-        private string _description;
+        private List<TranslationText> _description;
 
         /// <summary>
-        /// Identifier of the scoring measurement. E.g. percentage or points.
+        /// Identifier of the scoring measurement. E.g. percentage or points.<br/>
+        /// Can be null/undefined.
         /// </summary>
-        public string? Identifier { get => _identifier; set => _identifier = value; }
+        public List<TranslationText>? Identifier { get => _identifier; set => _identifier = value; }
         /// <summary>
         /// The measurement of the scoring. E.g. 0-100 or a Pass/Fail
         /// </summary>
@@ -27,6 +28,12 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// <summary>
         /// Further scoring description
         /// </summary>
-        public string Description { get => _description; set => _description = value; }
+        public List<TranslationText> Description { get => _description; set => _description = value; }
+
+        public ScoringScheme()
+        {
+            _measurement = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Pass/Fail" } };
+            _description = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Pass or fail description" } };
+        }
     }
 }
