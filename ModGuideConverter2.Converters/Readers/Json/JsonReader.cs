@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using ModGuideConverter2.Core.DTOs;
 using System.Text.Json.Nodes;
 using Newtonsoft.Json.Linq;
+using Org.BouncyCastle.Crypto.Agreement.JPake;
 
 namespace ModGuideConverter2.Converters.Readers.Json
 {
@@ -22,14 +23,14 @@ namespace ModGuideConverter2.Converters.Readers.Json
             ModuleGuideDirectory = moduleGuideDirectory;
         }
         
-        public Module ReadModule(string branchname, string modulename)
+        public ModuleDTO ReadModule(string branchname, string modulename)
         {
             string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, "Modules", modulename + ".json");
             using (StreamReader reader = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
 
-                if (serializer.Deserialize(reader, typeof(Module)) is Module module)
+                if (serializer.Deserialize(reader, typeof(ModuleDTO)) is ModuleDTO module)
                 {
                     return module;
                 }
@@ -37,16 +38,20 @@ namespace ModGuideConverter2.Converters.Readers.Json
             throw new InvalidOperationException("Deserialized object was not of type Module");
         }
 
-        public ModuleGuide ReadModuleGuide(string branchname)
+        public ModuleGuideDTO ReadModuleGuide(string branchname)
         {
             string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, ModuleGuideDirectory.Name + ".json");
             using (StreamReader reader = File.OpenText(path))
             {
-                JsonSerializer serializer = new JsonSerializer();
-
-                if (serializer.Deserialize(reader, typeof(ModuleGuide)) is ModuleGuide moduleguide)
+                ModuleGuideDTO? moduleGuide = JsonConvert.DeserializeObject<ModuleGuideDTO>(reader.ReadToEnd(), new JsonSerializerSettings
                 {
-                    return moduleguide;
+                    TypeNameHandling = TypeNameHandling.Auto,
+                    ObjectCreationHandling = ObjectCreationHandling.Replace
+                });
+
+                if (moduleGuide != null)
+                {
+                    return moduleGuide;
                 }
             }
             throw new InvalidOperationException("Deserialized object was not of type ModuleGuide");

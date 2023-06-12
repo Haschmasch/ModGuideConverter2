@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JsonSubTypes;
 using ModGuideConverter2.Core.DTOs.GerneralDTOs;
+using Newtonsoft.Json;
 
 namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 {

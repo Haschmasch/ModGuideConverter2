@@ -21,6 +21,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         private List<TranslationText>? _verificationMethod;
         private DocumentRef? _document;
         private LearningSpecification _learningSpecification;
+        private QualifiedLerningSpecification? _qualifiedLerningSpecification;
 
         public SubAchievement? ChildAchievement { get => _childAchievement; set => _childAchievement = value; }
         public List<TranslationText> Title { get => _title; set => _title = value; }
@@ -36,6 +37,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         public List<TranslationText>? VerificationMethod { get => _verificationMethod; set => _verificationMethod = value; }
         public DocumentRef? Document { get => _document; set => _document = value; }
         public LearningSpecification LearningSpecification { get => _learningSpecification; set => _learningSpecification = value; }
+        public QualifiedLerningSpecification? QualifiedLerningSpecification { get => _qualifiedLerningSpecification; set => _qualifiedLerningSpecification = value; }
 
         public SubAchievement()
         {

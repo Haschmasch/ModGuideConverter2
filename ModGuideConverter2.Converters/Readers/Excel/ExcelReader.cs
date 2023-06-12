@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModGuideConverter2.Core.DTOs;
 
 namespace ModGuideConverter2.Converters.Readers.Excel
 {
@@ -17,12 +18,12 @@ namespace ModGuideConverter2.Converters.Readers.Excel
             ModuleGuideDirectory = moduleGuideDirectory;
         }
 
-        public void ReadModule()
+        public ModuleDTO ReadModule(string branchname, string modulename)
         {
             throw new NotImplementedException();
         }
 
-        public void ReadModuleGuide()
+        public ModuleGuideDTO ReadModuleGuide(string branchname)
         {
             throw new NotImplementedException();
         }

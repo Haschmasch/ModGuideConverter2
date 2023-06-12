@@ -27,7 +27,7 @@ namespace ModGuideConverter2.Core.DTOs
         private string? _grade;
         private List<string> _availableLanguages;
         private List<List<TranslationText>> _instructionalLanguages;
-        private Identity _identification;
+        private PersonalIdentity _learnerIdentification;
         private AwardingBody _awardingBody;
         private List<LearningOutcome> _learningOutcomes;
         private List<Assessment> _assessments;
@@ -52,7 +52,7 @@ namespace ModGuideConverter2.Core.DTOs
         public string PrimaryLanguageShort { get => _primaryLanguageShort; set => _primaryLanguageShort = value; }
         public int TotalEctsCredits { get => _totalEctsCredits; set => _totalEctsCredits = value; }
         public List<string> AvailableLanguages { get => _availableLanguages; set => _availableLanguages = value; }
-        public Identity Identification { get => _identification; set => _identification = value; }
+        public PersonalIdentity LearnerIdentification { get => _learnerIdentification; set => _learnerIdentification = value; }
         public AwardingBody AwardingBody { get => _awardingBody; set => _awardingBody = value; }
         public List<LearningOutcome> LearningOutcomes { get => _learningOutcomes; set => _learningOutcomes = value; }
         public List<Assessment> Assessments { get => _assessments; set => _assessments = value; }
@@ -72,7 +72,7 @@ namespace ModGuideConverter2.Core.DTOs
             _totalEctsCredits = 3;
             _availableLanguages = new List<string>() { "en" };
             _instructionalLanguages = new List<List<TranslationText>>() { new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "English" } } };
-            _identification = new PersonalIdentity();
+            _learnerIdentification = new PersonalIdentity();
             _awardingBody = new AwardingBody();
             _learningOutcomes = new List<LearningOutcome>() { new LearningOutcome() };
             _assessments = new List<Assessment>() { new Assessment() };

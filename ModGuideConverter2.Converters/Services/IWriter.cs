@@ -13,8 +13,8 @@ namespace ModGuideConverter2.Converters.Services
     {
         ModuleGuideDirectory ModuleGuideDirectory { get; }
         
-        void Write(ModuleGuide moduleGuide, string branchname);
+        void Write(ModuleGuideDTO moduleGuide, string branchname);
 
-        void Write(Module module, string branchname);
+        void Write(ModuleDTO module, string branchname);
     }
 }

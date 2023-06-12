@@ -8,7 +8,7 @@ using ModGuideConverter2.Core.DTOs.GerneralDTOs;
 
 namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 {
-    public class QualifiedLerningSpecification : LearningSpecification
+    public class QualifiedLerningSpecification
     {
         private List<TranslationText> _learningOpportunity;
 
