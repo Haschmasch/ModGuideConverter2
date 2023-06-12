@@ -7,13 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.16" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <Compile Remove="Configurations\**" />
+    <EmbeddedResource Remove="Configurations\**" />
+    <None Remove="Configurations\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.16" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

@@ -17,13 +17,13 @@ namespace ModGuideConverter2.Storage.Services
         /// <summary>
         /// 
         /// </summary>
-        void AddModuleGuideDirectory();
+        void AddModuleGuideDirectory(SignatureDTO signature);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="moduleGuide"></param>
-        void UpdateModuleGuide(ModuleGuideDTO moduleGuide);
+        void UpdateModuleGuide(ModuleGuideDTO moduleGuide, string branchName);
 
         /// <summary>
         /// 
@@ -33,26 +33,28 @@ namespace ModGuideConverter2.Storage.Services
         /// <summary>
         /// 
         /// </summary>
-        void AddModule();
+        void AddModule(string branchName);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="module"></param>
-        void AddModule(ModuleDTO module);
+        /// <param name="branchName"></param>
+        void AddModule(ModuleDTO module, string branchName);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="module"></param>
-        void UpdateModule(ModuleDTO module);
+        /// <param name="branchName"></param>
+        void UpdateModule(ModuleDTO module, string branchName);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sourceModuleId"></param>
-        /// <param name="newModuleId"></param>
-        void CopyModule(string sourceModuleId, string newModuleId);
+        /// <param name="sourceModuleName"></param>
+        /// <param name="newModuleName"></param>
+        void CopyModule(string branchName, string sourceModuleName, string newModuleId);
 
         /// <summary>
         /// 
@@ -60,26 +62,26 @@ namespace ModGuideConverter2.Storage.Services
         /// <param name="targetModuleGuideDirectory"></param>
         /// <param name="sourceModuleId"></param>
         /// <param name="newModuleId"></param>
-        void CopyModule(ModuleGuideDirectory targetModuleGuideDirectory, string sourceModuleId, string newModuleId);
+        void CopyModule(string branchName, ModuleGuideDirectory targetModuleGuideDirectory, string sourceModuleId, string newModuleId);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="moduleId"></param>
-        void RemoveModule(string moduleId);
+        /// <param name="moduleName"></param>
+        void RemoveModule(string branchName, string moduleId);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="message"></param>
         /// <param name="signature"></param>
-        void CommitChanges(string message, SignatureDTO signature);
+        void CommitChanges(string branchName, string message, SignatureDTO signature);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="signature"></param>
-        void MergeChanges(SignatureDTO signature);
+        void MergeChanges(string sourceBranchName, SignatureDTO signature);
 
         /// <summary>
         /// 
@@ -87,5 +89,10 @@ namespace ModGuideConverter2.Storage.Services
         /// <param name="tag"></param>
         /// <param name="commitId"></param>
         void SetTag (string tag, string commitId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void AddWorktree(string branchName);
     }
 }

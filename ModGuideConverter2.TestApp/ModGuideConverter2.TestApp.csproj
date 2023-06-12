@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ModGuideConverter2.Converters\ModGuideConverter2.Converters.csproj" />
     <ProjectReference Include="..\ModGuideConverter2.Core\ModGuideConverter2.Core.csproj" />
+    <ProjectReference Include="..\ModGuideConverter2.Storage\ModGuideConverter2.Storage.csproj" />
   </ItemGroup>
 
 </Project>

@@ -28,9 +28,13 @@ namespace ModGuideConverter2.Converters.Readers.Json
             string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, "Modules", modulename + ".json");
             using (StreamReader reader = File.OpenText(path))
             {
-                JsonSerializer serializer = new JsonSerializer();
+                ModuleDTO? module = JsonConvert.DeserializeObject<ModuleDTO>(reader.ReadToEnd(), new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.Auto,
+                    ObjectCreationHandling = ObjectCreationHandling.Replace
+                });
 
-                if (serializer.Deserialize(reader, typeof(ModuleDTO)) is ModuleDTO module)
+                if (module != null)
                 {
                     return module;
                 }

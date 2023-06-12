@@ -1,9 +1,12 @@
 ﻿using ModGuideConverter2.Converters;
 using ModGuideConverter2.Converters.Readers.Json;
+using ModGuideConverter2.Converters.Services;
 using ModGuideConverter2.Converters.Writers.Json;
 using ModGuideConverter2.Core.DTOs;
 using ModGuideConverter2.Core.DTOs.MicrocredentialDTOs;
 using ModGuideConverter2.Core.Models;
+using ModGuideConverter2.Storage.DTOs;
+using ModGuideConverter2.Storage.Git;
 using NPOI.SS.Formula.Functions;
 using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
@@ -14,28 +17,24 @@ namespace ModGuideConverter2.TestApp
     {
         static void Main(string[] args)
         {
+            RootDirectory rootDirectory = new RootDirectory { Path = @"B:\root" };
+
+            RootService rootService = new RootService(rootDirectory);
+            rootService.Add();
+
             ModuleGuideDirectory moduleGuideDirectory = new ModuleGuideDirectory();
-            ModuleGuideDTO moduleGuide = new ModuleGuideDTO();
-            ModuleGuideDTO moduleGuide1 = new ModuleGuideDTO();
+            moduleGuideDirectory.RootDirectory = rootDirectory;
+            moduleGuideDirectory.Name = "ModGuide1";
 
-            moduleGuideDirectory.RootDirectory = new RootDirectory() { Path = @"C:\Users\nicoh\OneDrive\Desktop\root" };
-            moduleGuideDirectory.Name = "ModGuide";
+            IWriter writer = new JsonWriter(moduleGuideDirectory);
+            StorageOperationService operationService = new StorageOperationService(writer);
+            SignatureDTO signatureDTO = new SignatureDTO() { AuthorName = "Robin Hassler", AuthorEmail = "Robin.Hassler@example.com", Timestamp = DateTime.Now };
+            operationService.AddModuleGuideDirectory(signatureDTO);
 
-            JsonWriter jsonWriter = new JsonWriter(moduleGuideDirectory);
-
-            string path = Path.Combine(@"C:\Users\nicoh\OneDrive\Desktop\root", "ModGuide", "Master", "test" + ".json");
-            string master = "Master";
-
-            foreach (ModuleDTO module in moduleGuide.Modules)
-            {
-                module.SubAchievements.Add(new SubAchievement { QualifiedLerningSpecification = new QualifiedLerningSpecification()});
-            }
-
-            jsonWriter.Write(moduleGuide, master);
-
-            JsonReader jsonReader = new JsonReader(moduleGuideDirectory);
-
-            moduleGuide1 = jsonReader.ReadModuleGuide(master);
+            operationService.AddWorktree("Branch1");
+            operationService.AddModule(new ModuleDTO() { ModuleId = "123456"}, "Branch1");
+            operationService.AddWorktree("Branch2");
+            operationService.AddModule(new ModuleDTO() { ModuleId = "654321" }, "Branch2");
         }
     }
 }

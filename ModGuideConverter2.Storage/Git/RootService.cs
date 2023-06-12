@@ -3,12 +3,13 @@ using ModGuideConverter2.Storage.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ModGuideConverter2.Storage.Git
 {
-    public class RootService : IRootService
+    public class RootService : StorageService, IRootService
     {
         public RootDirectory RootDirectory { get; }
 
@@ -24,12 +25,20 @@ namespace ModGuideConverter2.Storage.Git
         /// <exception cref="NotImplementedException"></exception>
         public void Add()
         {
-            throw new NotImplementedException();
+            DirectoryInfo rootInfo = new DirectoryInfo(RootDirectory.Path);
+            if(rootInfo.Exists is false)
+            { 
+                rootInfo.Create();
+            }
         }
 
         public void Remove()
         {
-            throw new NotImplementedException();
+            DirectoryInfo rootInfo = new DirectoryInfo(RootDirectory.Path);
+            if (rootInfo.Exists)
+            {
+                rootInfo.Delete(true);
+            }
         }
     }
 }

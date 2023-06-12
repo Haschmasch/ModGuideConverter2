@@ -23,6 +23,22 @@ namespace ModGuideConverter2.Converters.Writers.Json
 
         public void Write(ModuleGuideDTO moduleGuide, string branchname)
         {
+            List<ModuleDTO> moduleDTOs = moduleGuide.Modules;
+            
+            foreach (var moduleDTO in moduleDTOs)
+            {
+                string modulePath = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, "Modules", moduleDTO.ModuleId + ".json");
+                using (StreamWriter file = File.CreateText(modulePath))
+                {
+                    string output = JsonConvert.SerializeObject(moduleDTO, Formatting.Indented, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.None
+                    });
+                    file.Write(output);
+                }
+            }
+
+            moduleGuide.Modules.Clear();
             string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, ModuleGuideDirectory.Name + ".json");
             using (StreamWriter file = File.CreateText(path))
             {
@@ -36,11 +52,14 @@ namespace ModGuideConverter2.Converters.Writers.Json
 
         public void Write(ModuleDTO module, string branchname)
         {
-            string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, ModuleGuideDirectory.Name + ".json");
+            string path = Path.Combine(ModuleGuideDirectory.RootDirectory.Path, ModuleGuideDirectory.Name, branchname, "Modules", module.ModuleId + ".json");
             using (StreamWriter file = File.CreateText(path))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, module);
+                string output = JsonConvert.SerializeObject(module, Formatting.Indented, new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.None
+                });
+                file.Write(output);
             }
         }
     }

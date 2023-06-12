@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace ModGuideConverter2.Storage.Git
 {
-    public class StorageInformationService : IStorageInformationService
+    public class StorageInformationService : StorageService, IStorageInformationService
     {
+        private const string _masterName = "master";
         public ModuleGuideDirectory ModuleGuideDirectory { get; }
 
         public StorageInformationService(ModuleGuideDirectory moduleGuideDirectory)

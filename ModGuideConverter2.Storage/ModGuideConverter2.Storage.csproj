@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Templates\" />
+    <None Remove="Templates\.gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\.gitignore" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ModGuideConverter2.Converters\ModGuideConverter2.Converters.csproj" />
     <ProjectReference Include="..\ModGuideConverter2.Core\ModGuideConverter2.Core.csproj" />
   </ItemGroup>
 

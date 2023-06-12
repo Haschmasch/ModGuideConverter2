@@ -1,6 +1,9 @@
 #First, ignore everything
 *
+!*/
 #Whitelist the \Modules Directory
-!*/Modules
+!/Modules
+!/Uploads
 #Whitelist all .json files
 !*.json
+!.gitkeep

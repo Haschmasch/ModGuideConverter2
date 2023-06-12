@@ -50,22 +50,22 @@ namespace ModGuideConverter2.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fec9c9ad-1c04-4c07-bb44-7cad634f551e",
-                            ConcurrencyStamp = "7efcc5c2-135d-482e-bf30-3cb5e8d5fb5d",
+                            Id = "e49c2bc8-1293-4485-8221-079ee6a99af3",
+                            ConcurrencyStamp = "0ba34084-6352-4124-9a16-ec920e3c78e6",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "41e722da-72cb-4ec1-9838-187e0f7b18d5",
-                            ConcurrencyStamp = "d1f60d18-bf95-4ad8-b12e-6a6dcb151725",
+                            Id = "6eccba78-87ee-4cf4-9809-3ed0e91e15b4",
+                            ConcurrencyStamp = "31299fdd-6e17-4914-9b19-0bc5c8528dd0",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "ba11e7d7-a97d-4829-85b6-96bb322b8fcf",
-                            ConcurrencyStamp = "18d987d3-2103-4934-827d-886b2f415946",
+                            Id = "9d7af2e1-1c72-46fa-a430-ee82527cedf0",
+                            ConcurrencyStamp = "0b8063ec-531f-4c50-b077-679fecd37a14",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
