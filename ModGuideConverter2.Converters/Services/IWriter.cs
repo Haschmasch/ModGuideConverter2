@@ -1,5 +1,6 @@
-﻿using ModGuideConverter.Core.DTOs;
-using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.DTOs;
+using ModGuideConverter2.Core.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace ModGuideConverter2.Converters.Services
     {
         ModuleGuideDirectory ModuleGuideDirectory { get; }
         
-        void Write(ModuleGuide moduleGuide);
+        void Write(ModuleGuide moduleGuide, string branchname);
 
-        void Write(Module module);
+        void Write(Module module, string branchname);
     }
 }

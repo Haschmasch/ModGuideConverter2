@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModGuideConverter2.Converters\ModGuideConverter2.Converters.csproj" />
+    <ProjectReference Include="..\ModGuideConverter2.Core\ModGuideConverter2.Core.csproj" />
+  </ItemGroup>
+
 </Project>
