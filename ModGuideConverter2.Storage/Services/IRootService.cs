@@ -1,4 +1,4 @@
-﻿using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace ModGuideConverter2.Storage.Services
     {
         public RootDirectory RootDirectory { get; }
         /// <summary>
-        /// 
+        /// Adds a root directory
         /// </summary>
         void Add();
 

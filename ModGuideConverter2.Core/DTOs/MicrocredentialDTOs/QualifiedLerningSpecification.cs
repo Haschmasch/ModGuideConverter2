@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 
         private List<TranslationText> _isced_FCode;
 
-        private string _ectsCredits;
+        private int _ectsCredits;
 
         private List<TranslationText> _learningMode;
 
@@ -42,7 +43,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// </summary>
         public List<TranslationText> Isced_FCode { get => _isced_FCode; set => _isced_FCode = value; }
 
-        public string EctsCredits { get => _ectsCredits; set => _ectsCredits = value; }
+        public int EctsCredits { get => _ectsCredits; set => _ectsCredits = value; }
        
         /// <summary>
         /// References to the Europass Standard List of Modes Of Learning and Assessment.<br/>
@@ -75,5 +76,18 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/qdr/c_c71cce15
         /// </summary>
         public List<TranslationText> NqfLevel { get => _nqfLevel; set => _nqfLevel = value; }
+
+        public QualifiedLerningSpecification()
+        {
+            _learningOpportunity = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Course" } };
+            _isced_FCode = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Software and applications development and analysis" } };
+            _ectsCredits = 3;
+            _learningMode = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Project based" } };
+            _learningSettingTypeMode = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "non-formal learning" } };
+            _entryRequirements = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "None" } };
+            _isPartialQualification = false;
+            _eqfLevel = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "Level 2" } };
+            _nqfLevel = new List<TranslationText>() { new TranslationText() { LanguageShort = "en", Text = "DQR Level 2" } };
+        }
     }
 }

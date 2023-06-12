@@ -1,4 +1,4 @@
-﻿using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Storage.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +17,11 @@ namespace ModGuideConverter2.Storage.Git
             RootDirectory = rootDirectory;
         }
 
+        /// <summary>
+        /// This is a implementation of adding root directories.<br/>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void Add()
         {
             throw new NotImplementedException();

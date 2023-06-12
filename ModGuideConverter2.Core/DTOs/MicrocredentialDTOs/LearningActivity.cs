@@ -28,5 +28,11 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/learning-assessment/7813801c77 
         /// </summary>
         public List<TranslationText> TeachingInstruments { get => _teachingInstruments; set => _teachingInstruments = value; }
+
+        public LearningActivity()
+        {
+            _teachingMethod = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "classroom coursework" } };
+            _teachingInstruments = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Blended" } };
+        }
     }
 }

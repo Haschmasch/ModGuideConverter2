@@ -1,6 +1,6 @@
 ﻿using LibGit2Sharp;
-using ModGuideConverter.Core.DTOs;
-using ModGuideConverter.Core.Models;
+using ModGuideConverter2.Core.DTOs;
+using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Storage.DTOs;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace ModGuideConverter2.Storage.Services
         /// 
         /// </summary>
         /// <param name="moduleGuide"></param>
-        void UpdateModuleGuide(ModuleGuide moduleGuide);
+        void UpdateModuleGuide(ModuleGuideDTO moduleGuide);
 
         /// <summary>
         /// 
@@ -39,13 +39,13 @@ namespace ModGuideConverter2.Storage.Services
         /// 
         /// </summary>
         /// <param name="module"></param>
-        void AddModule(Module module);
+        void AddModule(ModuleDTO module);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="module"></param>
-        void UpdateModule(Module module);
+        void UpdateModule(ModuleDTO module);
 
         /// <summary>
         /// 

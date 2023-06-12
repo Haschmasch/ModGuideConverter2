@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ModGuideConverter2.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230610174712_DBSetup")]
-    partial class DBSetup
+    [Migration("20230611140137_DB_Setup")]
+    partial class DB_Setup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,22 +53,22 @@ namespace ModGuideConverter2.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3be935b3-7e50-405f-b126-0e813c4b2d8a",
-                            ConcurrencyStamp = "5092b1e7-d530-4223-b621-cddf7e7ce28a",
+                            Id = "fec9c9ad-1c04-4c07-bb44-7cad634f551e",
+                            ConcurrencyStamp = "7efcc5c2-135d-482e-bf30-3cb5e8d5fb5d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "01772b1e-aae1-4c87-91f0-4f3f65d6e2aa",
-                            ConcurrencyStamp = "c7c9e568-239f-40c8-a796-fcfecf9c712a",
+                            Id = "41e722da-72cb-4ec1-9838-187e0f7b18d5",
+                            ConcurrencyStamp = "d1f60d18-bf95-4ad8-b12e-6a6dcb151725",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "47b73c91-9ebd-4292-88f7-732881185bdc",
-                            ConcurrencyStamp = "5b3e5006-9c10-4940-8bcd-a0e1b25c5a07",
+                            Id = "ba11e7d7-a97d-4829-85b6-96bb322b8fcf",
+                            ConcurrencyStamp = "18d987d3-2103-4934-827d-886b2f415946",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -180,7 +180,88 @@ namespace ModGuideConverter2.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ModGuideConverter.Core.Models.ConverterUser", b =>
+            modelBuilder.Entity("ModGuideConverter2.Core.Models.ModuleGuideDirectory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("RootDirectoryId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RootDirectoryId");
+
+                    b.ToTable("ModuleGuideDirectories");
+                });
+
+            modelBuilder.Entity("ModGuideConverter2.Core.Models.RootDirectory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RootDirectories");
+                });
+
+            modelBuilder.Entity("ModGuideConverter2.Core.Models.UserModuleGuideMapping", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConverterUserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ModuleGuideDirectoryId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConverterUserId");
+
+                    b.HasIndex("ModuleGuideDirectoryId");
+
+                    b.ToTable("UserModuleGuideMappings");
+                });
+
+            modelBuilder.Entity("ModGuideConverter2.Data.ConverterUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -244,87 +325,6 @@ namespace ModGuideConverter2.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ModGuideConverter.Core.Models.ModuleGuideDirectory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("RootDirectoryId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RootDirectoryId");
-
-                    b.ToTable("ModuleGuideDirectories");
-                });
-
-            modelBuilder.Entity("ModGuideConverter.Core.Models.RootDirectory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RootDirectories");
-                });
-
-            modelBuilder.Entity("ModGuideConverter.Core.Models.UserModuleGuideMapping", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ConverterUserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("ModuleGuideDirectoryId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ConverterUserId");
-
-                    b.HasIndex("ModuleGuideDirectoryId");
-
-                    b.ToTable("UserModuleGuideMappings");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -336,7 +336,7 @@ namespace ModGuideConverter2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ModGuideConverter.Core.Models.ConverterUser", null)
+                    b.HasOne("ModGuideConverter2.Data.ConverterUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -345,7 +345,7 @@ namespace ModGuideConverter2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ModGuideConverter.Core.Models.ConverterUser", null)
+                    b.HasOne("ModGuideConverter2.Data.ConverterUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -360,7 +360,7 @@ namespace ModGuideConverter2.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModGuideConverter.Core.Models.ConverterUser", null)
+                    b.HasOne("ModGuideConverter2.Data.ConverterUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -369,16 +369,16 @@ namespace ModGuideConverter2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ModGuideConverter.Core.Models.ConverterUser", null)
+                    b.HasOne("ModGuideConverter2.Data.ConverterUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ModGuideConverter.Core.Models.ModuleGuideDirectory", b =>
+            modelBuilder.Entity("ModGuideConverter2.Core.Models.ModuleGuideDirectory", b =>
                 {
-                    b.HasOne("ModGuideConverter.Core.Models.RootDirectory", "RootDirectory")
+                    b.HasOne("ModGuideConverter2.Core.Models.RootDirectory", "RootDirectory")
                         .WithMany()
                         .HasForeignKey("RootDirectoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -387,15 +387,15 @@ namespace ModGuideConverter2.Migrations
                     b.Navigation("RootDirectory");
                 });
 
-            modelBuilder.Entity("ModGuideConverter.Core.Models.UserModuleGuideMapping", b =>
+            modelBuilder.Entity("ModGuideConverter2.Core.Models.UserModuleGuideMapping", b =>
                 {
-                    b.HasOne("ModGuideConverter.Core.Models.ConverterUser", "ConverterUser")
+                    b.HasOne("ModGuideConverter2.Data.ConverterUser", "ConverterUser")
                         .WithMany()
                         .HasForeignKey("ConverterUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModGuideConverter.Core.Models.ModuleGuideDirectory", "ModuleGuideDirectory")
+                    b.HasOne("ModGuideConverter2.Core.Models.ModuleGuideDirectory", "ModuleGuideDirectory")
                         .WithMany()
                         .HasForeignKey("ModuleGuideDirectoryId")
                         .OnDelete(DeleteBehavior.Cascade)

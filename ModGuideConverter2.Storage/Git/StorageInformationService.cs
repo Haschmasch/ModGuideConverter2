@@ -1,5 +1,5 @@
-﻿using ModGuideConverter.Core.DTOs;
-using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.DTOs;
+using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Storage.DTOs;
 using ModGuideConverter2.Storage.Services;
 using System;
@@ -34,22 +34,22 @@ namespace ModGuideConverter2.Storage.Git
             throw new NotImplementedException();
         }
 
-        public Module GetModule(string branchName, string commitId, string moduleId)
+        public ModuleDTO GetModule(string branchName, string commitId, string moduleId)
         {
             throw new NotImplementedException();
         }
 
-        public ModuleGuide GetModuleGuide()
+        public ModuleGuideDTO GetModuleGuide()
         {
             throw new NotImplementedException();
         }
 
-        public ModuleGuide GetModuleGuide(string branchName)
+        public ModuleGuideDTO GetModuleGuide(string branchName)
         {
             throw new NotImplementedException();
         }
 
-        public ModuleGuide GetModuleGuide(string branchName, string commitId)
+        public ModuleGuideDTO GetModuleGuide(string branchName, string commitId)
         {
             throw new NotImplementedException();
         }

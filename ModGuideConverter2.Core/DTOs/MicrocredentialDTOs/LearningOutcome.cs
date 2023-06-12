@@ -15,7 +15,9 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         private List<TranslationText> _relatedEscoSkill;
         private List<TranslationText> _escoSkillDescription;
 
-        //Interpretation of "prefLabel" from exported xml. Origin (Esco) unclear.
+        /// <summary>
+        /// Title of the esco criteria
+        /// </summary>
         public List<TranslationText> Title { get => _title; set => _title = value; }
 
         /// <summary>
@@ -41,5 +43,23 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
 
         //Not outlined in the credential.xml file but still found to be useful.
         public List<TranslationText> EscoSkillDescription { get => _escoSkillDescription; set => _escoSkillDescription = value; }
+
+        //Maybe add Esco status too, some skills are deprecated and should not be used.
+
+        public LearningOutcome()
+        {
+            _title = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Critical Thinking" } };
+            _escoTargetType = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "skill" } };
+            _escoSkillPillarReusabilityLevel = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "transversal skills and competences" } };
+            _relatedEscoSkill = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "think analytically" } };
+            _escoSkillDescription = new List<TranslationText>() 
+            { 
+                new TranslationText 
+                {
+                    LanguageShort = "en", 
+                    Text = "Make and defend judgements based on internal evidence and external criteria. Critically evaluate the credibility and reliability of information before using or passing it on to others. Develop independent and critical thinking." 
+                } 
+            };
+        }
     }
 }

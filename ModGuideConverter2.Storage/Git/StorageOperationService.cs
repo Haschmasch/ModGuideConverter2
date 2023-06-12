@@ -1,5 +1,5 @@
-﻿using ModGuideConverter.Core.DTOs;
-using ModGuideConverter.Core.Models;
+﻿using ModGuideConverter2.Core.DTOs;
+using ModGuideConverter2.Core.Models;
 using ModGuideConverter2.Storage.DTOs;
 using ModGuideConverter2.Storage.Services;
 using System;
@@ -24,7 +24,7 @@ namespace ModGuideConverter2.Storage.Git
             throw new NotImplementedException();
         }
 
-        public void AddModule(Module module)
+        public void AddModule(ModuleDTO module)
         {
             throw new NotImplementedException();
         }
@@ -69,12 +69,12 @@ namespace ModGuideConverter2.Storage.Git
             throw new NotImplementedException();
         }
 
-        public void UpdateModule(Module module)
+        public void UpdateModule(ModuleDTO module)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateModuleGuide(ModuleGuide moduleGuide)
+        public void UpdateModuleGuide(ModuleGuideDTO moduleGuide)
         {
             throw new NotImplementedException();
         }

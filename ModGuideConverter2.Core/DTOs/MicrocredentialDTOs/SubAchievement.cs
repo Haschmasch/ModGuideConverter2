@@ -18,7 +18,7 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         private List<TranslationText> _description;
         private string? _grade;
         private DateTime? _issueDate;
-        private List<TranslationText> _verificationMethod;
+        private List<TranslationText>? _verificationMethod;
         private DocumentRef? _document;
         private LearningSpecification _learningSpecification;
 
@@ -33,8 +33,15 @@ namespace ModGuideConverter2.Core.DTOs.MicrocredentialDTOs
         /// http://data.europa.eu/snb/supervision-verification/25831c2 <br/>
         /// http://data.europa.eu/snb/supervision-verification/44314532f9
         /// </summary>
-        public List<TranslationText> VerificationMethod { get => _verificationMethod; set => _verificationMethod = value; }
+        public List<TranslationText>? VerificationMethod { get => _verificationMethod; set => _verificationMethod = value; }
         public DocumentRef? Document { get => _document; set => _document = value; }
         public LearningSpecification LearningSpecification { get => _learningSpecification; set => _learningSpecification = value; }
+
+        public SubAchievement()
+        {
+            _title = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Software Specification" } };
+            _description = new List<TranslationText>() { new TranslationText { LanguageShort = "en", Text = "Has attended the first part of Software Engineering for Requirements Specification" } };
+            _learningSpecification = new LearningSpecification();
+        }
     }
 }
