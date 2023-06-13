@@ -16,5 +16,6 @@ We use a ASP.NET Core API as a backend that can parse and save module guides as 
 LibGit2Sharp is used to save files in individual user folders (Branches) using Git-Worktrees. This also allows us to have a version-oriented approach in the backend while controlling the Git operations over the API.
 We use a PostgreSQL-Database to store User data and additional information for the Git directories. The User-management is done using ASP.NET Core Identity. 
 
-Please look at the open issues for missing features.
-The wiki pages also give you further information regarding the individual C#-Projects.
+## Remarks
+Please take a look at the open issues for missing features.
+The wiki pages also give you further information regarding the individual parts of the project.
