@@ -14,7 +14,12 @@ See https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022H0627(02
 ## The (theoretical) solution
 We use a ASP.NET Core API as a backend that can parse and save module guides as json files on the server file-system using Newtonsoft.Json. 
 LibGit2Sharp is used to save files in individual user folders (Branches) using Git-Worktrees. This also allows us to have a version-oriented approach in the backend while controlling the Git operations over the API.
-We use a PostgreSQL-Database to store User data and additional information for the Git directories. The User-management is done using ASP.NET Core Identity. 
+We use a PostgreSQL-Database to store User data and additional information for the Git directories. The User-management is done using ASP.NET Core Identity. The Database access and initialization is realized with EntityFramework.
+
+## The folder structure
+A ModGuideConverter can support multiple root directories. Their path can be found in the database. A root-directory contains multiple sub-directories. Each of them represents a module guide. 
+A sub-directory contains the different Git-Worktrees of a module guide aswell as the git repo under the "master" folder. Each worktree represents a working directory of a user who is working on the module guide. The user access to the module guides is defined in the database table "UserModuleGuideMappings". 
+
 
 ## Remarks
 Please take a look at the open issues for missing features.
